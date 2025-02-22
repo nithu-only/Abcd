@@ -1,0 +1,141 @@
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        // Initial Array
+        int[] arr = {1, 2, 3};
+        
+        System.out.println("Initial Array: " + Arrays.toString(arr));
+        
+        // Inserting Elements
+        arr = insertElement(arr, 4);
+        
+        System.out.println("After inserting 4: " + Arrays.toString(arr));
+        
+        // Deleting Elements
+        arr = deleteElement(arr, 2); // Delete element at index '2'
+        
+        System.out.println("After deleting element at index '2': " + Arrays.toString(arr));
+    }
+
+    public static int[] insertElement(int[] originalArray, int newElement) {
+        int[] newArray = new int[originalArray.length + 1];
+        
+        for (int i = 0; i < originalArray.length; i++) {
+            newArray[i] = originalArray[i];
+        }
+        
+        newArray[newArray.length - 1] = newElement;
+        
+        return newArray;
+    }
+
+    public static int[] deleteElement(int[] originalArray, int indexToDelete) {
+        if (indexToDelete < originalArray.length && indexToDelete >= 0) {
+            int[] newArray = new int[originalArray.length - 1];
+            
+            for (int i = 0; i < indexToDelete; i++) {
+                newArray[i] = originalArray[i];
+            }
+            
+            for (int j = indexToDelete; j < originalArray.length - 1; j++) {
+                newArray[j] = originalArray[j + 1];
+            }
+            
+            return newArray;
+            
+       } else if(indexToDelete == -1){
+           return null;
+       }else{
+           System.out.println("Invalid Index");
+           return null;
+       }
+   }
+
+}
+
+
+
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        // Initial Array
+        int[] arr = {1, 2, 3, 4, 5};
+        
+        System.out.println("Original Array: " + Arrays.toString(arr));
+        
+        // Reverse Array
+        reverseArray(arr);
+        
+        System.out.println("Reversed Array: " + Arrays.toString(arr));
+    }
+
+    public static void reverseArray(int[] arr) {
+        int left = 0;
+        int right = arr.length - 1;
+        
+        while (left < right) {
+            // Swap elements at left and right indices
+            int temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+            
+            left++;
+            right--;
+        }
+    }
+}
+
+
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        // Initial Array
+        int[] arr = {1, 2, 3, 4, 5};
+        
+        System.out.println("Original Array: " + Arrays.toString(arr));
+        
+        // Reverse Array
+        reverseArray(arr);
+        
+        System.out.println("Reversed Array: " + Arrays.toString(arr));
+    }
+
+    public static void reverseArray(int[] arr) {
+        int left = 0;
+        int right = arr.length - 1;
+        
+        while (left < right) {
+            // Swap elements at left and right indices
+            int temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+            
+            left++;
+            right--;
+        }
+    }
+}
+
+
+import java.util.Scanner;
+public class Simple_Interest
+{
+    public static void main(String args[]) 
+    {
+        float p, r, t;
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter the Principal : ");
+        p = s.nextFloat();
+        System.out.print("Enter the Rate of interest : ");
+        r = s.nextFloat();
+        System.out.print("Enter the Time period : ");
+        t = s.nextFloat();
+        float si;
+        si = (r * t * p) / 100;
+        System.out.print("The Simple Interest is : " + si);
+    }
+}
+
